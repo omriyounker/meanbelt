@@ -1,0 +1,20 @@
+<a  [routerLink]="['/addpoll']">Create a new Poll</a> | <a  (click)= 'logout()'href="#">Logout</a>
+<h2>Current Polls:</h2>
+<form class="leg" (submit)="onSubmit()" method="post" #formData = 'ngForm'>
+  <label for="">Search</label> <input type="text" name="search" value="" [(ngModel)] = "searchterm"><br>
+</form>
+
+<table>
+  <thead>
+    <th>Name</th>
+    <th>Survey Question</th>
+    <th>Date Posted</th>
+    <th>Action</th>
+  </thead>
+  <tr *ngFor= "let poll of polls; let idx = index">
+    <td>{{poll.createBy}}</td>
+    <td><a [routerLink]="['/poll', idx]">{{poll.question}}</a></td>
+    <td>{{poll.created | date:'longDate'}}</td>
+    <td ><a (click)="delete(idx)" class = "link" *ngIf="user == poll.createBy">Delete</a></td>
+  </tr>
+</table>

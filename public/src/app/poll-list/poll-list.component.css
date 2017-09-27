@@ -1,0 +1,14 @@
+.link{
+  color: 	#0645AD;
+  text-decoration: underline;
+}
+table {
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+tr:nth-child(even) {background-color: #f2f2f2}
+table, th, td {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    padding: 2px;
+}
